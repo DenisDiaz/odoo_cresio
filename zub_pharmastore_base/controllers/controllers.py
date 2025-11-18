@@ -33,3 +33,4 @@ class CommonController(http.Controller):
         return make_json_response(data, status=status)
 
 
+# aqui
