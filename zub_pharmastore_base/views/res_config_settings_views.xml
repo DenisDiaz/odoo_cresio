@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.partner.radius</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="PharmaStore Configuracion" string="PharmaStore Configuracion" name="pharmastore_settings">
+                    <block title="Radio de Sucursales" name="pharmastore_settings_radius">
+                        <setting string="Radio De Sucursales Cercanas" help="Define el radio máximo (en km) para mostrar las sucursales cercanas." id="search_radius_setting">
+                           <field name="pharmastore_radius"/>
+                       </setting>
+                    </block>
+                    <block title="Código QR" name="pharmastore_qr_code_length">
+                        <setting string="Cantidad de digitos del QR" help="Cantidad maxima de digitos que tendra el código QR." id="qr_code_length_setting">
+                           <field name="pharmastore_qr_code_length"/>
+                       </setting>
+                        <setting string="Vigencia del código QR" help="Vigencia del código QR en minutos." id="qr_code_duration_setting">
+                           <field name="pharmastore_qr_code_duration"/>
+                       </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

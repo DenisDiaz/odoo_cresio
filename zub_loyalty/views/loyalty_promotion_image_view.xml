@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_loyalty_program_inherit_custom_tab" model="ir.ui.view">
+    <field name="name">loyalty.program.view.form.inherit.custom.tab</field>
+    <field name="model">loyalty.program</field>
+    <field name="inherit_id" ref="loyalty.loyalty_program_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+            <page string="Detalles adicionales">
+                <group>
+                    <field name="highlight_text"/>
+                    <field name="terms_and_conditions" widget="html"/>
+                    <field name="description_html" widget="html"/>
+                </group>
+                <group string="Imágenes">
+                            <field name="image_ids" context="{'default_promotion_id': id}">
+                            <list  edit="true" delete="true" create="true" editable="bottom" multi_edit="true" open_form_view="false">
+                                <field name="sequence" widget="handle"/>
+                                <field name="image_type"/>
+                                <field name="image" widget="image"/>
+                                <field name="active"/>
+                            </list>
+                        </field>
+                </group>
+            </page>
+        </xpath>
+    </field>
+</record>
+</odoo>

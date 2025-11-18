@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="password_reset_code_template" model="mail.template">
+            <field name="name">Recovery Password Email Template</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="email_to">{{object.login}}</field>
+            <field name="subject">Se ha solicitado cambio de contraseña en tu cuenta</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <p>Hola,<br/><br/>
+                    Para restablecer su contraseña utilice el siguiente código: <strong t-out="object.reset_code"/><br/>
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
